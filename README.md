@@ -17,14 +17,28 @@ The datasets will be coverted to a strict data structure as follows: \
 }
 ```
 NOTE: datacard should be created manually in the DB ( the ID is required for the data items remapping )
+
+### Dataset original jsonl row
+Some datasets may require original reference, especially the multi message ones we will be splitting to their own lines
+```json
+{
+   "_id": "Mongo ObjectId",
+  "rawLine": "String"
+}
+```
+
+
 ### Dataset data row structure
+We want the same format for all of the dataset items regardless of their original structure to make selecting or working with them easier
 ```json
 {
    "_id": "Mongo ObjectId",
    "datasetId": "Mongo ObjectId@index - Id of the dataset card",
+   "rawJsonId": "Mongo ObjectId@null - Id of the original data ( can be null )",
    "systemMessage": "String@empty - System message for the LLM",
    "contextMessage": "Context@empty - System message for the LLM",
    "textMessage": "String@empty - Raw text message if type is 'llm-completion'",
+   "state": "String@default('new') - Data adjustments/completion may require special states",
    "userAssistantMessages": [
      {
        "provider": "String - One of ['user','assistant','memory']",
