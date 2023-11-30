@@ -15,6 +15,7 @@ The datasets will be coverted to a strict data structure as follows:
   "datasetOrigin": "String - Data origin: One of ['human','generated','mixed']"
 }
 ```
+NOTE: datacard should be created manually in the DB ( the ID is required for the data items remapping )
 ### Dataset data row
 ```json
 {
