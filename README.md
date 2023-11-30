@@ -36,8 +36,10 @@ NOTE: datacard should be created manually in the DB ( the ID is required for the
 Some datasets may require original reference, especially the multi message ones we will be splitting to their own lines
 ```json
 {
-   "_id": "Mongo ObjectId",
-  "rawLine": "String"
+  "_id": "Mongo ObjectId",
+  "datasetId": "Mongo ObjectId@index - Id of the dataset card",
+  "rawJsonString": "String - the original line of the jsonl",
+  "rawJsonHash": "String - SHA256 of the original line to avoid duplicates"
 }
 ```
 
@@ -48,10 +50,15 @@ We want the same format for all of the dataset items regardless of their origina
 {
    "_id": "Mongo ObjectId",
    "datasetId": "Mongo ObjectId@index - Id of the dataset card",
-   "rawJsonId": "Mongo ObjectId@null - Id of the original data ( can be null )",
+   "rawJsonId": "Mongo ObjectId@index@null - Id of the original data ( can be null )",
    "systemMessage": "String@empty - System message for the LLM",
-   "contextMessage": "Context@empty - System message for the LLM",
+   "contextMessages": [
+     "Context message for training row",
+     "Another context message for training row",
+     ...
+   ],
    "state": "String@default('new') - Data adjustments/completion may require special states",
+   "seriesPosition": "Number - in multiple chat messages what is the positions", 
    "messages": [
      {
        "provider": "String - One of ['user','assistant','memory','segment']",
