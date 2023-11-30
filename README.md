@@ -2,7 +2,8 @@
 Imports jsonl datasets to mongodb with remapping
 
 Each dataset is different so this project will contain a collection of scripts each for its own type of dataset. \
-The datasets will be coverted to a strict data structure as follows:
+The datasets will be coverted to a strict data structure as follows: \
+`NOTE: nothing is final and the structure may change as we encounter weireder datasets in the future`
 
 ### Dataset Source Card
 ```json
@@ -16,7 +17,7 @@ The datasets will be coverted to a strict data structure as follows:
 }
 ```
 NOTE: datacard should be created manually in the DB ( the ID is required for the data items remapping )
-### Dataset data row
+### Dataset data row structure
 ```json
 {
    "_id": "Mongo ObjectId",
@@ -26,11 +27,11 @@ NOTE: datacard should be created manually in the DB ( the ID is required for the
    "textMessage": "String@empty - Raw text message if type is 'llm-completion'",
    "userAssistantMessages": [
      {
-       "provider": "String - One of ['user','assistant']",
+       "provider": "String - One of ['user','assistant','memory']",
        "message": "String"
      },
      {
-       "provider": "String - One of ['user','assistant']",
+       "provider": "String - One of ['user','assistant','memory']",
        "message": "String"
      },
      ...
