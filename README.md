@@ -79,11 +79,11 @@ with them easier
   "seriesPosition": "Number - in multiple chat messages what is the positions",
   "messages": [
     {
-      "provider": "String - One of ['user','assistant','memory','segment']",
+      "provider": "String - One of ['user','assistant','search','memory','segment']",
       "message": "String"
     },
     {
-      "provider": "String - One of ['user','assistant','memory','segment']",
+      "provider": "String - One of ['user','assistant','search','memory','segment']",
       "message": "String"
     },
     ...
