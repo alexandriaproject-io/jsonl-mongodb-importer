@@ -101,8 +101,6 @@ if __name__ == "__main__":
 
         except DuplicateKeyError as e:
             print(f"Job {jobs_count}/{collection_size} - Already exists.")
-        if jobs_count > 0:
-            break
 
     print("Done!")
     print("")
