@@ -119,7 +119,7 @@ $: python3 job-creator [dataset_id] [job-type] [target] using [source] [source] 
   "target": "String - What to create/edit: One of ['messages', 'system','context']",
   "sources": "Array of String['messages', 'system','context']",
   "status": "String@default('new') - Job status: One of ['new','queued','error','completed']",
-  "tool": "String - What tool to use: One of ['default','gpt-3.5', 'gpt-4', 'gpt-4-1106-preview','llama-7b', 'llama-7b-chat','llama-13b', 'llama-13b-chat']",
+  "tool": "String - What tool to use: One of ['default', 'gpt-4-1106-preview', 'gpt-4-0613', 'gpt-4-0314', 'gpt-4', 'gpt-3.5-turbo-16k-0613', 'gpt-3.5-turbo-16k', 'gpt-3.5-turbo-1106', 'gpt-3.5-turbo-0613', 'gpt-3.5-turbo-0301', 'gpt-3.5-turbo']",
   "completedDate": "Date@not-set - when set TTL of 7 days for auto deletion ( if not set should not be removed )"
 }
 ```

@@ -7,8 +7,19 @@ from pika.exceptions import AMQPError
 job_types = ['generate', 'expand', 'rephrase']
 job_targets = ['system', 'messages', 'context']
 job_sources = ['system', 'messages', 'context']
-job_tools = ['default', 'gpt-3.5', 'gpt-4', 'gpt-4-1106-preview', 'llama-7b', 'llama-7b-chat', 'llama-13b',
-             'llama-13b-chat']
+job_tools = [
+    'default',
+    'gpt-4-1106-preview',
+    'gpt-4-0613',
+    'gpt-4-0314',
+    'gpt-4',
+    'gpt-3.5-turbo-16k-0613',
+    'gpt-3.5-turbo-16k',
+    'gpt-3.5-turbo-1106',
+    'gpt-3.5-turbo-0613',
+    'gpt-3.5-turbo-0301',
+    'gpt-3.5-turbo'
+]
 
 
 def get_user_confirmation():
