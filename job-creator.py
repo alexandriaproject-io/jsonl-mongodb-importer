@@ -98,7 +98,7 @@ if __name__ == "__main__":
         jobs_count += 1
 
         try:
-            job_id, job_data = create_new_job(dataset_id, document, job_type, job_target, job_sources, 'queued')
+            job_id, job_data = create_new_job(dataset_id, document, job_type, job_target, job_sources, 'queued', tool)
             try:
                 queue_job(job_id, job_data)
                 print(f"Job {jobs_count}/{collection_size} - Created.")
